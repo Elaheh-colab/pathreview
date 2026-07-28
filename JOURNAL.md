@@ -18,3 +18,18 @@ The `_detect_sections()` function within `resume_parser.py` currently relies on 
 *   **Part 2 - Tier Fit:** As a Tier 1 bug labeled as a "good first issue," this is a highly realistic match. It provides a localized, self-contained entry point into the codebase while directly aligning with core backend development and data engineering workflows. 
 *   **Codebase Readiness:** I have located the `_detect_sections()` function within `resume_parser.py` and reviewed the specific failing tests in `tests/unit/test_resume_parser.py`. Because the logic centers around regular expressions and string processing, I have enough context to safely plan the fix without needing to understand the entire multi-service architecture.
 *   **Scope and Time:** The scope is confined to one or two files, which easily fits the 3–6 hour time estimate for Tier 1 issues across Weeks 8–9. There are no open blockers or dependencies preventing me from starting.
+
+## Week 8 — Reproduction & solution planning
+
+**Reproduction commit link:** https://github.com/Elaheh-colab/pathreview/blob/fix/147-resume-section-whitespace/test_error_reproduce_week8.py
+*(Note: You can also use the direct commit URL from your GitHub repository history if you prefer)*
+
+**Reproduction summary:**
+I reproduced the bug by creating a local test script (`test_error_reproduce_week8.py`) that initializes `ResumeParser()` and parses the exact mock string provided in the issue ticket. I observed that the parser failed to detect the indented "Education" and "Skills" headers due to strict regex anchors, outputting an empty list `[]` instead of the expected sections.
+
+**PLAN.md link:** https://github.com/Elaheh-colab/pathreview/blob/fix/147-resume-section-whitespace/PLAN.md
+
+**Walkthrough video (recommended):** [https://www.loom.com/share/403e3a8cc7d4425db32b02b1cc8880fb]
+
+**Blockers or open questions:**
+I have no hard blockers to begin Week 9. My only minor open question is confirming during the implementation whether using `[ \t]*` (purely horizontal whitespace) is strictly better than `\s*` to avoid accidentally swallowing consecutive newlines in poorly formatted PDFs, but my planned unit tests should definitively answer this.
