@@ -61,7 +61,6 @@ I updated the regular expression patterns in the resume ingestion pipeline to to
 **Tests added or updated:**
 I touched `tests/unit/test_resume_parser.py`. I added a new test function, `test_detect_sections_with_indentation`, which specifically verifies that mock resume strings with heavily indented section headers are successfully parsed and extracted.
 
-**Self-review confirmation:** [x] make check passes  [x] make test-unit passes
-*(Note: As documented in my PR, my specific changes pass all checks without introducing new failures; legacy failures were documented).*
+**Self-review confirmation:** [ ] make check passes  [ ] make test-unit passes (no new failures introduced)
 
 **Draft PR feedback received from:** 
