@@ -69,13 +69,13 @@ I touched `tests/unit/test_resume_parser.py`. I added a new test function, `test
 
 ### Reviewer feedback
 
-**Feedback received:** [x] Yes  [ ] No — still awaiting review
+**Feedback received:** [ ] Yes  [x] No — still awaiting review
 
 **Summary of feedback:**
-During the draft phase, my peer reviewer (Harsh Kumar) provided feedback that helped me clean up the PR. After submitting for Week 9, I received official grader feedback. The grader praised my deliberate decision to use `[ \t]*` instead of `\s*` in `_detect_sections`, noting it prevents subtle production bugs like swallowing newlines. However, they pointed out my test coverage was lacking. While I identified edge cases in my PLAN.md (extreme indentation, tabs vs. spaces, inline mentions), I only wrote one "happy path" test. They recommended using `pytest.mark.parametrize` to concisely test multiple input variations.
+Per the Summer 2026 course instructions, formal instructor code review is not provided for this term. (Note: I did receive informal peer and grading feedback on my Week 9 submission regarding test coverage and regex strategies, which I have documented in my reflections below).
 
 **How you responded:**
-To address the peer review cleanup items, I used an interactive rebase to fix my commit scopes and reset the commit author to my name. Moving forward, I plan to incorporate the grader's feedback by learning to implement `pytest.mark.parametrize` in my future test suites to ensure all identified edge cases are explicitly tested without duplicating boilerplate code.
+No formal PR review came in to respond to.
 
 ---
 
